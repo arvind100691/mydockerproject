@@ -1,0 +1,8 @@
+# Ignore CMake/Build directory
+/build/
+
+# Ignore common editor and OS files
+.vscode/
+*.swp
+*.swo
+*.DS_Store
