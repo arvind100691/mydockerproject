@@ -8,6 +8,7 @@
 		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 		"dockerfile": "../Dockerfile"
 	}
+	,
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -15,12 +16,25 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
-	// Uncomment the next line to run commands after the container is created.
-	// "postCreateCommand": "cat /etc/os-release",
+	// Run a lightweight check after container creation (non-fatal)
+	"postCreateCommand": "cmake --version || true",
 
-	// Configure tool-specific properties.
-	// "customizations": {},
+	// Configure editor-specific customizations (extensions + settings) for VS Code
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cmake-tools",
+				"llvm-vs-code-extensions.vscode-clangd",
+				"ms-vscode.cpptools-extension-pack"
+			],
+			"settings": {
+				"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+				"clangd.arguments": ["--background-index"]
+			}
+		}
+	},
 
-	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "devcontainer"
+	// Connect as root by default inside the container
+	"remoteUser": "root"
 }
