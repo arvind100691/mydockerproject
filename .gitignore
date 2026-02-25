@@ -1,5 +1,6 @@
 # Ignore CMake/Build directory
 /build/
+.cache/
 
 # Ignore common editor and OS files
 .vscode/
