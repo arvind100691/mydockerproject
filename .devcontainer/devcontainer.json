@@ -1,61 +1,27 @@
 {
-	"name": "mydockerproject-devcontainer",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"context": ".."
-	},
-	"workspaceFolder": "/workspaces/mydockerproject",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"ms-vscode.cpptools",
-				"ms-vscode.cmake-tools",
-				"llvm-vs-code-extensions.vscode-clangd"
-			],
-			"settings": {
-				"terminal.integrated.shell.linux": "/bin/bash"
-			}
-		}
-	},
-	"remoteUser": "root"
-}
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
-{
-	"name": "Existing Dockerfile",
-	"build": {
-		// Sets the run context to one level up instead of the .devcontainer folder.
-		"context": "..",
-		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-		"dockerfile": "Dockerfile"
-	}
-	,
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Run a lightweight check after container creation (non-fatal)
-	"postCreateCommand": "cmake --version || true",
-
-	// Configure editor-specific customizations (extensions + settings) for VS Code
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"ms-vscode.cpptools",
-				"ms-vscode.cmake-tools",
-				"llvm-vs-code-extensions.vscode-clangd",
-				"ms-vscode.cpptools-extension-pack"
-			],
-			"settings": {
-				"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-				"clangd.arguments": ["--background-index"]
-			}
-		}
-	},
-
-	// Connect as root by default inside the container
-	"remoteUser": "root"
+  "name": "mydockerproject-devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspaces/mydockerproject",
+  "postCreateCommand": "cmake --version || true",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "ms-vscode.cpptools-extension-pack"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+        "clangd.arguments": [
+          "--background-index"
+        ]
+      }
+    }
+  },
+  "remoteUser": "root"
 }
