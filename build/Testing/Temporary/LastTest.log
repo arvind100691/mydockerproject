@@ -1,0 +1,30 @@
+Start testing: Feb 25 06:59 UTC
+----------------------------------------------------------
+1/1 Testing: Sanity.OnePlusOne
+1/1 Test: Sanity.OnePlusOne
+Command: "/workspaces/mydockerproject/build/tests/sample_test" "--gtest_filter=Sanity.OnePlusOne" "--gtest_also_run_disabled_tests"
+Directory: /workspaces/mydockerproject/build/tests
+"Sanity.OnePlusOne" start time: Feb 25 06:59 UTC
+Output:
+----------------------------------------------------------
+Running main() from /workspaces/mydockerproject/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Sanity.OnePlusOne
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Sanity
+[ RUN      ] Sanity.OnePlusOne
+[       OK ] Sanity.OnePlusOne (0 ms)
+[----------] 1 test from Sanity (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Sanity.OnePlusOne" end time: Feb 25 06:59 UTC
+"Sanity.OnePlusOne" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 25 06:59 UTC

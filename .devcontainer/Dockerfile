@@ -28,6 +28,7 @@ WORKDIR /app
 #  - ninja-build     : fast build tool
 #  - lcov            : code coverage tool
 #  - ca-certificates/wget : for fetching remote resources if needed
+#  - libgtest-dev    : googletest sources (will be built and installed below)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         build-essential \
@@ -41,8 +42,14 @@ RUN apt-get update && \
         ninja-build \
         lcov \
         wget \
-        ca-certificates && \
+        ca-certificates \
+        libgtest-dev && \
     rm -rf /var/lib/apt/lists/*
+
+# Build and install GoogleTest system-wide so that projects can #include <gtest/gtest.h>
+RUN cmake -S /usr/src/googletest -B /usr/src/googletest/build -DBUILD_SHARED_LIBS=ON && \
+    cmake --build /usr/src/googletest/build --target install && \
+    rm -rf /usr/src/googletest/build
 
 # Copy the current directory (your Git repo) into the container
 # NOTE: left commented per your request — uncomment if you want source copied
