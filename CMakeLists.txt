@@ -17,6 +17,12 @@ add_executable(${observer_pattern_executable_name} "${CMAKE_CURRENT_SOURCE_DIR}/
 # Link observer-pattern library to the executable
 target_link_libraries(${observer_pattern_executable_name} PRIVATE observer-pattern)
 
+get_filename_component(factory_pattern_executable_name "${CMAKE_CURRENT_SOURCE_DIR}/factory_pattern" NAME)
+add_executable(${factory_pattern_executable_name} "${CMAKE_CURRENT_SOURCE_DIR}/factory_pattern/main.cpp")
+
+get_filename_component(abstract_factory_pattern_executable_name "${CMAKE_CURRENT_SOURCE_DIR}/abstract_factory_pattern" NAME)
+add_executable(${abstract_factory_pattern_executable_name} "${CMAKE_CURRENT_SOURCE_DIR}/abstract_factory_pattern/main.cpp")
+
 # Use FetchContent to download and make GoogleTest available
 include(FetchContent)
 FetchContent_Declare(
