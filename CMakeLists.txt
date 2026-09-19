@@ -11,10 +11,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # Add lib subdirectory for libraries
 add_subdirectory(lib)
 
-add_executable(myapp main.cpp)
+get_filename_component(observer_pattern_executable_name "${CMAKE_CURRENT_SOURCE_DIR}/observer_pattern" NAME)
+add_executable(${observer_pattern_executable_name} "${CMAKE_CURRENT_SOURCE_DIR}/observer_pattern/main.cpp")
 
-# Link observer-pattern library to myapp
-target_link_libraries(myapp observer-pattern)
+# Link observer-pattern library to the executable
+target_link_libraries(${observer_pattern_executable_name} PRIVATE observer-pattern)
 
 # Use FetchContent to download and make GoogleTest available
 include(FetchContent)
